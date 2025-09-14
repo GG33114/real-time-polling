@@ -135,10 +135,13 @@ Response:
 When a vote is cast, the backend broadcasts live results to all clients in that poll room.  
 
 ### How to Test
-You can connect with any **Socket.IO client** (Node.js, browser, Postman WebSocket).  
-Join a room with:  
+Connect via Socket.IO client to receive live results.  
 ```js
-socket.emit("join_poll", <pollId>);
+import { io } from "socket.io-client";
+const socket = io("http://localhost:4000");
+
+//join poll room
+socket.emit("join_poll", 1);
 ```
 
 And listen for updates:  
