@@ -1,0 +1,24 @@
+# Node.js
+node_modules
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
+logs/*.log
+
+# Build outputs
+dist
+build
+
+# Prisma
+.prisma
+
+# Mac / Linux / Windows system files
+.DS_Store
+Thumbs.db
